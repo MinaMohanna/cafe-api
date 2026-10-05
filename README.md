@@ -125,7 +125,7 @@ cafeproject/
 
 POST /api/orders/
 
-`json
+```json
 {
     "table": 1,
     "status": "pending",
@@ -143,3 +143,4 @@ POST /api/orders/
         }
     ]
 }
+```
