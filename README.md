@@ -55,7 +55,7 @@ python manage.py runserver
 
 
 ## Cofe Project Structure
-
+```text
 cafeproject/
 ├── cafeproject/      # Project configuration
 ├── menu/             # Menu and orders app
@@ -65,7 +65,7 @@ cafeproject/
 │   └── admin.py
 ├── manage.py
 └── requirements.txt
-
+```
 
 
 ## API Endpoints
