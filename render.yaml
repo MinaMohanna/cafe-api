@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: cafe-api
+    env: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn cafeproject.wsgi:application"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.0
+      - key: DEBUG
+        value: False
+      - key: SECRET_KEY
+        generateValue: True
+      - key: WEB_CONCURRENCY
+        value: 4
+databases:
+  - name: cafe-db
+    databaseName: cafedb
+    user: cafeuser
