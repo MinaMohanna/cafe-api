@@ -7,9 +7,20 @@ class CategorySerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class ProductSerializer(serializers.ModelSerializer):
+    image = serializers.SerializerMethodField()
+
     class Meta:
         model = Product
         fields = '__all__'
+
+    def get_image(self, obj):
+        if obj.image:
+            request = self.context.get('request')
+            if request:
+                return request.build_absolut_url(obj.image.url)
+            return obj.image.url
+        return None
+
 
 class TableSerializer(serializers.ModelSerializer):
     class Meta:
